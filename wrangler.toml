@@ -1,0 +1,20 @@
+name = "depmedic-bot"
+main = "src/worker.js"
+compatibility_date = "2026-01-15"
+compatibility_flags = ["nodejs_compat"]
+
+# KV stores installation IDs and per-install settings.
+[[kv_namespaces]]
+binding = "INSTALLS"
+id = "TBD"   # set after `wrangler kv namespace create depmedic-bot-installs`
+
+[vars]
+APP_ID                = "TBD"  # set after creating the GitHub App
+APP_NAME              = "depmedic-bot"
+ALLOWED_PRIVATE_REPOS = "false" # flip to "true" after Marketplace listing approval
+WORKFLOW_GLOB         = ".github/workflows/"
+COMMENT_HEADER        = "## depmedic-bot"
+
+# Set secrets:
+#   wrangler secret put GH_PRIVATE_KEY     # PKCS#8 PEM, single-line escaped
+#   wrangler secret put GH_WEBHOOK_SECRET  # the HMAC-SHA256 secret you set on the App

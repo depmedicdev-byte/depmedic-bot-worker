@@ -1,0 +1,25 @@
+{
+  "name": "depmedic-bot",
+  "url": "https://depmedicdev-byte.github.io/depmedic-bot.html",
+  "hook_attributes": {
+    "url": "https://depmedic-bot.depmedicdev.workers.dev/webhook"
+  },
+  "redirect_url": "https://depmedicdev-byte.github.io/depmedic-bot-installed.html",
+  "callback_urls": [
+    "https://depmedicdev-byte.github.io/depmedic-bot-installed.html"
+  ],
+  "public": true,
+  "default_permissions": {
+    "contents": "read",
+    "metadata": "read",
+    "pull_requests": "write",
+    "checks": "read"
+  },
+  "default_events": [
+    "pull_request",
+    "installation",
+    "installation_repositories"
+  ],
+  "description": "Audits every PR that touches .github/workflows/*.yml. 14 cost / security / hygiene rules from ci-doctor, posted as a single PR comment that updates as you push. Free for public repos.",
+  "request_oauth_on_install": false
+}
